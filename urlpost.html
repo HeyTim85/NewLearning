@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>AJAX Example</title>
+    </head>
+    <body style='text-align:center'>
+        <h1>Loading a webpage into a DIV </h1>
+        <div id='info'>This sentence will be replaced with MSU webpage</div>
+       <script>
+            
+            params = "url-missouristate.edu"
+            request = new ajaxRequest()
+            request.open("POST","urlpost.php",true)
+            request.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+            request.setRequestHeader("Content-Length".param.length)
+            request.setRequestHeader("Connection","clone")
+            
+            request.onreadystatechange = fuction()
+            {
+                if(this.status == 200)
+                {
+                                   
+                if(this.readyState == 4)//do something when status changes to 4 which is when request is completed
+                {
+                    document.getElementById('info')//from div id
+                    
+                }
+                else alert("Ajax error: No data received.")
+            }
+            else alert("Ajax error: "+this.statusText)
+        }
+        
+        reqest.send(params)//sends params back
+        
+    
+    
+           
+            
+            // see what browser is running to return request in that format
+            function ajaxRequest()
+            {
+                try
+                {
+                    var request = new XMLHttpRequest()//good for most browsers
+                }
+                catch(e1)
+                {
+                    try
+                    {
+                        request = new ActiveXObject("Msxm12.XMLHTTP")//good for ie5
+                    }
+               catch(e1)
+                {
+                    try
+                    {
+                        request = new ActiveXObject("Microsoft.XHLHTTP")//good for ie6
+                    }
+                }
+                return request
+            }
+        
+            
+       </script>
+        
+        
+        
+</html>

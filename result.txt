@@ -1,0 +1,7 @@
+Array
+(
+    [0] => T
+    [1] => i
+    [2] => m
+)
+Wednesday October 04 2017 -7:28pm
